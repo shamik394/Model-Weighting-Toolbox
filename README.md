@@ -62,3 +62,5 @@ weights_{Sanderson}(i) = A * w_{m,Skill(i)} * w_{u}(i)
 $$
 
 * where A is a normalizing constant such that the sum of all the weights is equal to 1.
+
+
