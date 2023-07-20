@@ -26,3 +26,39 @@ $$
 for the $m$th model. This way, the weights add to one, and can be used to calculate a weighted average of the predictions of each model, just like with BMA: $\hat{y}_i=\sum_{m=1}^M w_m\hat{y}_{im}$.
 
 The difference between this approach (AIC) and BMA is that BMA samples and tests the performance of different weights to see which weights are optimal. Whereas AIC simply uses the fit of each model to determine the weights.
+
+## The Sanderson Approach for both skill and independence
+
+* Models differ in their skill to simulate observations, and there is an inherent lack of independence between models.
+*There are weighting strategies in the literature for use with climate model ensembles, which consider both model performance skill as well as the interdependency of models that arises from common development and calibration practices of the models.
+*These strategies are used to estimate a model average from several ensemble members that were simulated from dependent models of varying skill.
+*In this context, we use the RMSE as a representation of skill, however users can create and use different options for this metric.
+*This score is used as an input to develop our skill metric weights. We follow a similar recipe as Sanderson et al. (2015, 2017) and estimate model weights using
+the skill metrics with:
+
+$$
+w_{m,Skill(i)} = A * e^{ - ( \frac{ \delta_{i,(obs)}}{Dq} )^2 }
+$$
+
+* where A is a normalizing constant such that the sum of all the weights is equal to 1, δi(obs) is the “Median Skill” score for each model, and Dq is the radius of model quality, which determines the degree to which models with poor skill should be down‐weighted. A very small value of Dq will allocate a large fraction of weight to the single best‐performing model. Equally, as Dq approaches infinity, the model average will include more information from the non‐skill weighted models. For our study, we use a value of Dq = 0.9
+* The independence scores for each model can be calculated using the intermodel distances, which are a function of the RMSE between each of the models. The intermodel distance matrix is constructed with the RMSE values, and the similarity scores, S(δi,j), are then calculated for each pair of models i and j using this distance matrix. This score is calculated as follows:
+
+$$ 
+S(\delta_{i,j}) = e^{ - ( \frac{ \delta_{i,j}}{Du} )^2 }
+$$
+
+* where δi j are the RMSE values from the intermodel distance matrix and Du is the radius of similarity (Sanderson et al., 2015), which is a free parameter that determines the distance scale over which models should be considered similar and thus down‐weighted for co‐dependence. We choose a value of Du = 0.5, which is shown in Sanderson et al. (2015), to be an appropriate value. In theory, two identical models will produce a similarity score of S(δi,j) = 1, and this score approaches 0 as the distance between the models grows infinitely.
+
+* The independence scores, wu(i), are calculated using the similarity scores for each model in the following manner:
+
+$$ 
+w_{u}(i) = \Biggl\{1+\sum_{j\neq i}^n S(\delta_{i,j}) \Biggr\}^{-1}
+$$
+
+* where n is the total number of models. Finally, the equation used to combine the uniqueness and skill information to create the Sanderson set of model weights is:
+
+$$ 
+weights_{Sanderson}(i) = A * w_{m,Skill(i)} * w_{u}(i)
+$$
+
+* where A is a normalizing constant such that the sum of all the weights is equal to 1.
