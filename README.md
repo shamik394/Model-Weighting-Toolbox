@@ -51,7 +51,7 @@ $$
 
 * The independence scores, wu(i), are calculated using the similarity scores for each model in the following manner:
 
-$$ 
+$$
 w_{u}(i) = \Biggl\{1+\sum_{j\neq i}^n S(\delta_{i,j}) \Biggr\}^{-1}
 $$
 
