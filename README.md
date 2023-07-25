@@ -9,10 +9,7 @@ Tested on Python 3.6.13
 ```math
 RMSE=\sqrt{\frac{1}{N}\sum_{i=1}^N(y_i-\hat{y}_i)^2}
 ```
-  , where $y_i$ is the $i$th observation and $\hat{y}i=\Sigma{m=1}^M w_m\hat{y}{im}$ is the weighted average of the $M$ models' prediction values.
 * By repeatedly sampling weights, one can obtain an estimate of the optimal weights according to $RMSE$.
-* The best set of weights $x_{\text{best}}$ as well as the posterior set of weights $x_{\text{posterior}}$ are provided to the user as:
-$$(weights_{\text{BMA,optimal}}, weights_{\text{BMA,posterior}})$$.
 
 # Calculating independence for BMA (for lines #51-53)
 
@@ -20,17 +17,9 @@ $$(weights_{\text{BMA,optimal}}, weights_{\text{BMA,posterior}})$$.
 
 # AIC Definition
 
-AIC can also be used to weight different models. AIC captures some notion of model fit, so it makes sense to use this information to weight higher the models that fit the data the best. The formula for AIC is $AIC = -2 \hat{L} + 2 p$, where $\hat{L}$ is the estimated likelihood from the model and $p$ is the number of parameters in the model.
+AIC can also be used to weight different models. AIC captures some notion of model fit, so it makes sense to use this information to weight higher the models that fit the data the best. 
 
-When used for weighting, a typical approach is to use the weight
-
-$$
-weights_{AIC} = \frac{e^{-1/2 \cdot AIC_m}}{\sum_{m=1}^M e^{-1/2 \cdot AIC_m}}
-$$
-
-for the $m$th model. This way, the weights add to one and can be used to calculate a weighted average of the predictions of each model, just like with BMA: $\hat{y}_i=\sum_{m=1}^M w_m\hat{y}_{im}$.
-
-The difference between this approach (AIC) and BMA is that BMA samples and tests the performance of different weights to see which weights are optimal. Whereas AIC simply uses the fit of each model to determine the weights.
+Please visit the documentation for the corresponding title in the nb.
 
 ## The Sanderson Approach for both skill and independence
 
