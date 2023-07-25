@@ -53,7 +53,7 @@ $$
 * The independence scores, wu(i), are calculated using the similarity scores for each model in the following manner:
 
 $$
-w_u(i) = \bigg { 1 + \sum_{j\neq i}^n S(\delta_{i,j}) \bigg }^{-1}
+w_u(i) = \left[ 1 + \sum_{j\neq i}^n S(\delta_{i,j}) \right]^{-1}
 $$ 
 
 * where n is the total number of models. Finally, the equation used to combine the uniqueness and skill information to create the Sanderson set of model weights is:
