@@ -1,6 +1,8 @@
 # Model-Weighting-Toolbox
 Tested on Python 3.6.13
 
+The user should install the packages specified in the requirements.txt file.
+
 # BMA Function Definitions
 
 *   The key idea with BMA is to combine different models to improve prediction performance.
