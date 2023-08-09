@@ -1,5 +1,5 @@
 # Model-Weighting-Toolbox
-Tested on Python 3.6.13
+Tested on Python 3.9
 
 The user should install the packages specified in the requirements.txt file.
 
