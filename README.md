@@ -1,5 +1,5 @@
 # Model-Weighting-Toolbox
-Tested on Python 3.9
+Tested on Python 3.9, running on Red Hat Enterprise Linux Server, version 7.9 (Maipo)
 
 The user should install the packages specified in the requirements.txt file.
 
