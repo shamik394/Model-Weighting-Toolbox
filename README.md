@@ -3,11 +3,6 @@ Tested on Python 3.9, running on Red Hat Enterprise Linux Server, version 7.9 (M
 
 The user should install the packages specified in the requirements.txt file.
 
-# File Descriptions
-
-* The file "tasmax_moddat1(smaller) (1).csv" is the second example in the toolbox and is a contemporary scientific sample that has already been built into the toolbox.
-* The file " Model_Weighting_Toolbox_(cleaner_version)(2).ipynb" is the toolbox.
-
 # BMA Function Definitions
 
 *   The key idea with BMA is to combine different models to improve prediction performance.
