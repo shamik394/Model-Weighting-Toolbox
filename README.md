@@ -21,11 +21,9 @@ RMSE=\sqrt{\frac{1}{N}\sum_{i=1}^N(y_i-\hat{y}_i)^2}
 
 * Please visit the documentation for the corresponding title in the toolbox.
 
-# AIC Definition
+# MSE Definition
 
-AIC can also be used to weight different models. AIC captures some notion of model fit, so it makes sense to use this information to weight higher the models that fit the data the best. 
-
-Please visit the documentation for the corresponding title in the toolbox.
+* Please visit the documentation for the corresponding title in the toolbox.
 
 ## The Sanderson Approach for both skill and independence
 
