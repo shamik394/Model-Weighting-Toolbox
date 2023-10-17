@@ -1,5 +1,5 @@
 # Model-Weighting-Toolbox
-Tested on Python 3.9, running on Red Hat Enterprise Linux Server, version 7.9 (Maipo)
+Tested on Python 3.11.4, running on Red Hat Enterprise Linux Server, version 7.9 (Maipo)
 
 The user should install the packages specified in the requirements.txt file.
 
@@ -21,11 +21,9 @@ RMSE=\sqrt{\frac{1}{N}\sum_{i=1}^N(y_i-\hat{y}_i)^2}
 
 * Please visit the documentation for the corresponding title in the toolbox.
 
-# AIC Definition
+# MSE Definition
 
-AIC can also be used to weight different models. AIC captures some notion of model fit, so it makes sense to use this information to weight higher the models that fit the data the best. 
-
-Please visit the documentation for the corresponding title in the toolbox.
+* Please visit the documentation for the corresponding title in the toolbox.
 
 ## The Sanderson Approach for both skill and independence
 
