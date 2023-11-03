@@ -7,7 +7,7 @@ The user should install the packages specified in the requirements.txt file.
 
 The dataset used in the Model Weighing Toolbox as the second example is available on this website (https://climatedata.oscer.ou.edu/PMtest/), and please select "tasmax_moddat1.csv."       
 
-# BMA Function Definitions
+# Pseudo-BMA Function Definitions
 
 *   The key idea with BMA is to combine different models to improve prediction performance.
 *   BMA works by sampling different weights and then evaluating the performance of the combined model using those weights.
